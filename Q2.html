@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Q2 - Responsive Portfolio</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family:
+                Arial,
+                sans-serif;
+
+            background: #f5f6fa;
+
+            color: #25252d;
+
+            line-height: 1.6;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background: #ffffff;
+
+            padding: 18px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            box-shadow:
+                0 2px 15px
+                rgba(0, 0, 0, 0.05);
+        }
+
+
+        .logo {
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #6258dc;
+        }
+
+
+        nav {
+            display: flex;
+
+            gap: 22px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+
+            color: #444;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #6258dc;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 420px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6258dc,
+                    #8b6df6
+                );
+
+            color: white;
+        }
+
+
+        .hero .tag {
+            background:
+                rgba(255, 255, 255, 0.15);
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+            font-size: clamp(
+                38px,
+                6vw,
+                65px
+            );
+
+            margin-bottom: 12px;
+        }
+
+
+        .hero p {
+            max-width: 600px;
+
+            opacity: 0.9;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero a {
+            padding: 13px 26px;
+
+            background: white;
+
+            color: #6258dc;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .hero a:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 80px 8%;
+        }
+
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .section-title h2 {
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-title p {
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* ABOUT */
+
+        .about-content {
+            max-width: 800px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.06);
+        }
+
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .project-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.05);
+        }
+
+
+        .project-card:hover {
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(98, 88, 220, 0.15);
+        }
+
+
+        .project-number {
+            width: 50px;
+
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #efeeff;
+
+            color: #6258dc;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+
+        .project-card p {
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            background: #ecebff;
+        }
+
+
+        .cert-grid {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .certificate {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            background: #25252d;
+
+            color: white;
+
+            text-align: center;
+
+            border-radius: 20px;
+        }
+
+
+        .contact-box p {
+            color: #cccccc;
+
+            margin: 10px 0;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #17171d;
+
+            color: #aaa;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (
+            max-width: 768px
+        ) {
+
+            header {
+                padding: 16px 6%;
+            }
+
+
+            nav {
+                gap: 12px;
+            }
+
+
+            nav a {
+                font-size: 12px;
+            }
+
+
+            section {
+                padding: 60px 6%;
+            }
+
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (
+            max-width: 480px
+        ) {
+
+            header {
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .hero {
+                min-height: 380px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            MyPortfolio
+
+        </div>
+
+
+        <nav>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#certifications">
+                Certifications
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="tag">
+
+            FRONTEND PORTFOLIO
+
+        </div>
+
+
+        <h1>
+
+            Hi, I'm a Web Developer
+
+        </h1>
+
+
+        <p>
+
+            I create clean, responsive and
+            user-friendly web experiences using
+            modern frontend technologies.
+
+        </p>
+
+
+        <a href="#projects">
+
+            View My Projects
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ABOUT ME -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+
+                About Me
+
+            </h2>
+
+            <p>
+
+                A short introduction about myself
+
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p>
+
+                I am passionate about web development
+                and enjoy creating responsive and
+                interactive websites.
+
+                I work with HTML, CSS and JavaScript
+                to build simple, clean and modern
+                user interfaces.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>
+
+                My Projects
+
+            </h2>
+
+            <p>
+
+                Some of the projects I have created
+
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+
+                    01
+
+                </div>
+
+                <h3>
+
+                    Portfolio Website
+
+                </h3>
+
+                <p>
+
+                    A responsive personal portfolio
+                    created using HTML and CSS.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+
+                    02
+
+                </div>
+
+                <h3>
+
+                    To-Do Application
+
+                </h3>
+
+                <p>
+
+                    A simple task management
+                    application using JavaScript.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+
+                    03
+
+                </div>
+
+                <h3>
+
+                    Web Calculator
+
+                </h3>
+
+                <p>
+
+                    A basic calculator capable of
+                    performing arithmetic operations.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CERTIFICATIONS -->
+
+    <section
+        id="certifications"
+        class="certifications"
+    >
+
+        <div class="section-title">
+
+            <h2>
+
+                Certifications
+
+            </h2>
+
+            <p>
+
+                My learning achievements
+
+            </p>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+
+            <div class="certificate">
+
+                HTML & CSS
+
+            </div>
+
+
+            <div class="certificate">
+
+                JavaScript
+
+            </div>
+
+
+            <div class="certificate">
+
+                Web Development
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>
+
+                Contact
+
+            </h2>
+
+            <p>
+
+                Get in touch with me
+
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>
+
+                Let's Connect
+
+            </h3>
+
+
+            <p>
+
+                Email:
+                yazhinirajkumar07@email.com
+
+            </p>
+
+
+            <p>
+
+                Available for web development
+                projects and collaborations.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 My Portfolio
+
+    </footer>
+
+
+</body>
+
+</html>

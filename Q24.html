@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Q24 - Modal Popup</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6258dc,
+                    #8b6df6
+                );
+
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+
+            background: white;
+
+            padding: 50px 40px;
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.2);
+
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #25252d;
+
+            margin-bottom: 15px;
+
+            font-size: 36px;
+        }
+
+        .container p {
+            color: #666;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+        .open-btn {
+            padding: 14px 30px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #6258dc;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .open-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(98, 88, 220, 0.3);
+        }
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            justify-content: center;
+            align-items: center;
+
+            background:
+                rgba(0, 0, 0, 0.55);
+
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+
+            width: 100%;
+            max-width: 420px;
+
+            background: white;
+
+            padding: 45px 35px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            animation:
+                popup 0.3s ease;
+        }
+
+        @keyframes popup {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    scale(0.8)
+                    translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+
+        }
+
+        .close {
+            position: absolute;
+
+            top: 15px;
+            right: 20px;
+
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #f4f5fb;
+
+            color: #ef4444;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .close:hover {
+            background: #ef4444;
+
+            color: white;
+        }
+
+        .modal-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: #eeeaff;
+
+            border-radius: 50%;
+
+            font-size: 35px;
+        }
+
+        .modal-content h2 {
+            color: #25252d;
+
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            color: #666;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+        .close-btn {
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #6258dc;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .modal-content {
+                padding: 40px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Modal Popup</h1>
+
+    <p>
+
+        Click the button below to open
+        a simple modal popup.
+
+    </p>
+
+    <button
+        class="open-btn"
+        onclick="openModal()"
+    >
+
+        Open Modal
+
+    </button>
+
+</div>
+
+
+<div
+    class="modal"
+    id="modal"
+>
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            onclick="closeModal()"
+        >
+
+            ×
+
+        </span>
+
+
+        <div class="modal-icon">
+
+            💬
+
+        </div>
+
+
+        <h2>Welcome!</h2>
+
+        <p>
+
+            This is a modal popup created
+            using HTML, CSS and JavaScript.
+
+        </p>
+
+
+        <button
+            class="close-btn"
+            onclick="closeModal()"
+        >
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openModal() {
+
+    document
+        .getElementById("modal")
+        .classList.add("show");
+
+}
+
+
+function closeModal() {
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+
+}
+
+
+window.onclick =
+    function(event) {
+
+        const modal =
+            document
+                .getElementById("modal");
+
+        if (
+            event.target === modal
+        ) {
+
+            closeModal();
+
+        }
+
+    };
+
+</script>
+
+</body>
+
+</html>

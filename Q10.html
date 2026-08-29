@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q10 - Login Form</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6258dc,
+            #8b6df6
+        );
+
+    padding: 20px;
+}
+
+.container {
+
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.2);
+}
+
+h1 {
+
+    text-align: center;
+
+    margin-top: 0;
+}
+
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #6258dc;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#message {
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Login</h1>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter username"
+    >
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+    >
+
+    <button onclick="login()">
+        Login
+    </button>
+
+    <div id="message"></div>
+
+</div>
+
+<script>
+
+function login() {
+
+    const username =
+        document
+            .getElementById("username")
+            .value
+            .trim();
+
+    const password =
+        document
+            .getElementById("password")
+            .value;
+
+    const message =
+        document
+            .getElementById("message");
+
+    if (
+        username === "" ||
+        password === ""
+    ) {
+
+        message.textContent =
+            "Username and password are required.";
+
+        message.style.color =
+            "red";
+
+    }
+
+    else {
+
+        message.textContent =
+            "Login successful!";
+
+        message.style.color =
+            "green";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

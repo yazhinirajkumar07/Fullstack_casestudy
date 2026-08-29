@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Q15 - Volume of Sphere</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f5fb;
+
+    padding: 20px;
+}
+
+.container {
+
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 20px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #6258dc;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#result {
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #6258dc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Volume of a Sphere</h1>
+
+    <input
+        type="number"
+        id="radius"
+        placeholder="Enter radius"
+        min="0"
+    >
+
+    <button onclick="calculateVolume()">
+
+        Calculate Volume
+
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateVolume() {
+
+    const radius =
+        parseFloat(
+            document
+                .getElementById("radius")
+                .value
+        );
+
+    const result =
+        document
+            .getElementById("result");
+
+    if (
+        isNaN(radius) ||
+        radius < 0
+    ) {
+
+        result.textContent =
+            "Please enter a valid radius.";
+
+        return;
+
+    }
+
+    const volume =
+        (4 / 3) *
+        Math.PI *
+        Math.pow(radius, 3);
+
+    result.textContent =
+        "Volume = " +
+        volume.toFixed(2);
+
+}
+
+</script>
+
+</body>
+
+</html>

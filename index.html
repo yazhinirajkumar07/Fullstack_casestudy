@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Frontend Assignment</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: #f4f5fb;
+
+            color: #25252d;
+
+            min-height: 100vh;
+        }
+
+        header {
+            background: #6258dc;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: 50px auto;
+        }
+
+        .questions {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 25px 20px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #6258dc;
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+
+            min-height: 45px;
+
+            line-height: 1.5;
+
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #6258dc;
+
+            color: white;
+
+            padding: 10px 20px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            opacity: 0.85;
+        }
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: white;
+
+            color: #666;
+        }
+
+        @media (max-width: 900px) {
+
+            .questions {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .questions {
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Frontend Assignment</h1>
+
+    <p>
+        HTML, CSS and JavaScript Programs
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <div class="questions">
+
+
+        <div class="card">
+
+            <h2>Q1</h2>
+
+            <p>
+                Name and Email Validation Form
+            </p>
+
+            <a href="Q1.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q2</h2>
+
+            <p>
+                Responsive Portfolio
+            </p>
+
+            <a href="Q2.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q3</h2>
+
+            <p>
+                Password Strength Indicator
+            </p>
+
+            <a href="Q3.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q4</h2>
+
+            <p>
+                Single Page Tabs
+            </p>
+
+            <a href="Q4.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q5</h2>
+
+            <p>
+                To-Do List
+            </p>
+
+            <a href="Q5.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q6</h2>
+
+            <p>
+                Real-Time Search Filter
+            </p>
+
+            <a href="Q6.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q7</h2>
+
+            <p>
+                Responsive Photo Gallery
+            </p>
+
+            <a href="Q7.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q8</h2>
+
+            <p>
+                Registration Form Validation
+            </p>
+
+            <a href="Q8.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q9</h2>
+
+            <p>
+                User Feedback Form
+            </p>
+
+            <a href="Q9.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q10</h2>
+
+            <p>
+                Login Form Validation
+            </p>
+
+            <a href="Q10.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q11</h2>
+
+            <p>
+                Contact Us Form
+            </p>
+
+            <a href="Q11.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q12</h2>
+
+            <p>
+                Responsive FAQ Grid
+            </p>
+
+            <a href="Q12.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q13</h2>
+
+            <p>
+                Student Marks Table
+            </p>
+
+            <a href="Q13.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q14</h2>
+
+            <p>
+                Calculator
+            </p>
+
+            <a href="Q14.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q15</h2>
+
+            <p>
+                Sphere Volume Calculator
+            </p>
+
+            <a href="Q15.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q16</h2>
+
+            <p>
+                15 Puzzle Game
+            </p>
+
+            <a href="Q16.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q17</h2>
+
+            <p>
+                Registration Form
+            </p>
+
+            <a href="Q17.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q18</h2>
+
+            <p>
+                Random Alignment and DOM Operations
+            </p>
+
+            <a href="Q18.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q19</h2>
+
+            <p>
+                Restaurant and Table Reservation
+            </p>
+
+            <a href="Q19.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q20</h2>
+
+            <p>
+                60-Second Countdown Timer
+            </p>
+
+            <a href="Q20.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q21</h2>
+
+            <p>
+                Light and Dark Theme Toggle
+            </p>
+
+            <a href="Q21.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q22</h2>
+
+            <p>
+                Image Upload Preview
+            </p>
+
+            <a href="Q22.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q23</h2>
+
+            <p>
+                Moving Element Animation
+            </p>
+
+            <a href="Q23.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q24</h2>
+
+            <p>
+                Modal Popup
+            </p>
+
+            <a href="Q24.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Q25</h2>
+
+            <p>
+                Product Gallery Filter
+            </p>
+
+            <a href="Q25.html">
+                Open Question
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        Frontend Assignment | Q1 to Q25
+    </p>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Q17 - Registration Form</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f5fb;
+
+    padding: 20px;
+}
+
+.container {
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+
+    text-align: center;
+
+    margin-top: 0;
+}
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #6258dc;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#message {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Registration Form</h1>
+
+    <label>
+        Full Name
+    </label>
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter your full name"
+    >
+
+    <label>
+        Email
+    </label>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+    >
+
+    <label>
+        Password
+    </label>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+    >
+
+    <label>
+        Confirm Password
+    </label>
+
+    <input
+        type="password"
+        id="confirmPassword"
+        placeholder="Confirm your password"
+    >
+
+    <button onclick="register()">
+
+        Register
+
+    </button>
+
+    <div id="message"></div>
+
+</div>
+
+<script>
+
+function register() {
+
+    const name =
+        document
+            .getElementById("name")
+            .value
+            .trim();
+
+    const email =
+        document
+            .getElementById("email")
+            .value
+            .trim();
+
+    const password =
+        document
+            .getElementById("password")
+            .value;
+
+    const confirmPassword =
+        document
+            .getElementById("confirmPassword")
+            .value;
+
+    const message =
+        document
+            .getElementById("message");
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (
+        name === "" ||
+        email === "" ||
+        password === "" ||
+        confirmPassword === ""
+    ) {
+
+        message.textContent =
+            "Please fill all fields.";
+
+        message.style.color = "red";
+
+    }
+
+    else if (
+        !emailPattern.test(email)
+    ) {
+
+        message.textContent =
+            "Please enter a valid email.";
+
+        message.style.color = "red";
+
+    }
+
+    else if (
+        password.length < 6
+    ) {
+
+        message.textContent =
+            "Password must contain at least 6 characters.";
+
+        message.style.color = "red";
+
+    }
+
+    else if (
+        password !== confirmPassword
+    ) {
+
+        message.textContent =
+            "Passwords do not match.";
+
+        message.style.color = "red";
+
+    }
+
+    else {
+
+        message.textContent =
+            "Registration successful!";
+
+        message.style.color = "green";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

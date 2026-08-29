@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Q23 - Moving Element</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f5fb;
+}
+
+h1 {
+
+    margin-bottom: 30px;
+}
+
+.track {
+
+    width: 80%;
+
+    max-width: 700px;
+
+    height: 100px;
+
+    position: relative;
+
+    background: white;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.1);
+}
+
+.box {
+
+    width: 70px;
+
+    height: 70px;
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 0;
+
+    border-radius: 50%;
+
+    background: #6258dc;
+
+    animation:
+        move 3s linear infinite;
+}
+
+@keyframes move {
+
+    from {
+
+        left: 0;
+
+    }
+
+    to {
+
+        left: calc(100% - 70px);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Moving Element Animation</h1>
+
+<div class="track">
+
+    <div class="box"></div>
+
+</div>
+
+</body>
+
+</html>
